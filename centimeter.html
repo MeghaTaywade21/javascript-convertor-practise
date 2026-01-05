@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Centimeter to Inches Converter</title>
+
+    <style>
+        body {
+            background-color:#A8BBA3;
+        }
+
+        .app-heading {
+            text-align: center;
+            color: #000000;
+            font-size: 40px;
+        }
+
+        .container {
+            border: 1px solid #000;
+            width: 400px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding:40px 40px ;
+            border-radius: 20px;
+            background-color:#97A87A;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-number{
+            display:block;
+            margin-bottom: 20px;
+            padding:10px 20px;
+            border-radius :20px;
+            border:none;
+            background-color: #decfab;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .input-number:focus{
+            outline:none;
+            box-shadow:0 0 5px #6d94c5;
+        }
+     
+        .btn{
+            background-color: #acacad;
+            color:#000000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 160px;
+            margin:10px 20px ;
+        }
+
+        .btn:active{
+            transform:scale(0.95);
+        }
+
+        .btn-calculate{
+            background-color: #FCF9EA;
+        }
+
+        .btn-clear{
+            background-color: #E8D1C5;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content:space-between ;
+            margin-top: 15px;
+        }
+
+        #sum-result {
+            font-size: 30px;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+     </style>
+</head>
+
+<body>
+
+<h1 class="app-heading">Centimeter to Inches Converter</h1>  
+
+<div class="container">
+    
+    <input type="number" 
+           id="num1" 
+           placeholder="Enter centimeters" 
+           class="input-number" />
+
+    <p id="sum-result">Inches: 0</p>
+
+    <div class="btn-container"> 
+
+        <button class="btn btn-calculate" onclick="convertCmToInches()">
+            Convert
+        </button>
+
+        <button class="btn btn-clear" onclick="clearoutput()">Clear</button>
+
+    </div>
+</div>
+
+<script>
+    function convertCmToInches() {
+        const cmInput = document.getElementById("num1").value;
+        const inches = cmInput / 2.54;
+
+        document.getElementById("sum-result").innerText =
+            `Inches: ${inches.toFixed(2)}`;
+    }
+
+    function clearoutput(){
+        document.getElementById("num1").value = "";
+        document.getElementById("sum-result").innerText = "Inches: 0";
+    }  
+</script>
+
+</body>
+</html>
