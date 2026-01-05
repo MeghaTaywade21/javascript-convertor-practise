@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Feet to Inches</title>
+
+    <style>
+
+        body {
+            background-color:#E0F7FA;
+        }
+
+        .app-heading {
+            text-align: center;
+            color: #006064; 
+            font-size: 40px;
+        }
+
+        .container {
+            border: 1px solid #006064;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding:40px;
+            border-radius: 20px;
+            background-color:#B2EBF2; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-number{
+            padding:10px 20px;
+            border-radius :20px;
+            border:none;
+            background-color: #E0F2F1;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input-number:focus{
+            outline:none;
+            box-shadow:0 0 5px #0097A7;
+        }
+     
+        .btn{
+            background-color: #4DD0E1;
+            color:#000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 160px;
+            margin:10px 20px;
+        }
+
+        .btn-calculate{
+            background-color: #26C6DA; 
+        }
+
+        .btn-clear{
+            background-color: #80DEEA; 
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        #sum-result {
+            font-size: 30px;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+            color:#004D40;
+        }
+
+     </style>
+</head>
+
+<body>
+  <h1 class="app-heading">Feet to Inches Converter</h1>  
+
+  <div class="container">
+    <input type="number" 
+    id="num1" 
+    placeholder="Enter feet" 
+    class="input-number"
+    />
+
+    <p id="sum-result">Inches: 0</p>
+
+    <div class="btn-container"> 
+      <button class="btn btn-calculate" onclick="calculateSum()">
+        Convert
+      </button>
+
+      <button class="btn btn-clear" onclick="clearoutput()">
+        Clear
+      </button>
+    </div>
+  </div>
+
+<script>
+    function calculateSum() {
+        const input1 = document.getElementById("num1");
+        const totalInches = parseInt(input1.value) * 12;
+
+        const resultElement = document.getElementById("sum-result");
+        resultElement.innerText = `Inches: ${totalInches}`;
+    }
+
+    function clearoutput(){
+        const input1 = document.getElementById("num1");
+        const resultElement = document.getElementById("sum-result");
+
+        input1.value = "";
+        resultElement.innerText = "Inches: 0";
+    }  
+</script>
+
+</body>
+</html>
